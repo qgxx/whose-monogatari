@@ -4,7 +4,7 @@ from timer import Timer
 
 
 class Player(pygame.sprite.Sprite):
-    def __init__(self, pos, group, collision_sprites, tree_sprites, interaction_sprites):
+    def __init__(self, pos, group, collision_sprites, tree_sprites, interaction_sprites, soil_layer):
         super().__init__(group)
 
         # animations (in self.import_assets) (import assets)
@@ -70,6 +70,7 @@ class Player(pygame.sprite.Sprite):
         self.tree_sprites = tree_sprites
         self.interaction_sprites = interaction_sprites
         self.sleep = False
+        self.soil_player = soil_layer
 
         # get_target_pos
         self.target_pos = self.rect.center
@@ -94,9 +95,11 @@ class Player(pygame.sprite.Sprite):
 
     def use_tool(self):
         if self.selected_tool == 'hoe':
-            pass
+            self.soil_player.get_hit(self.target_pos)
+
         if self.selected_tool == 'water':
             pass
+
         if self.selected_tool == 'axe':
             for tree in self.tree_sprites.sprites():
                 if tree.rect.collidepoint(self.target_pos):

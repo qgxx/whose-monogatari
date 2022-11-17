@@ -6,6 +6,7 @@ from sprites import Generic, Water, WildFlower, Tree, Interaction
 from pytmx.util_pygame import load_pygame
 from support import import_folder
 from transition import Transition
+from soil import SoilLayer
 
 
 class Level:
@@ -19,9 +20,13 @@ class Level:
         self.tree_sprites = pygame.sprite.Group()
         self.interaction_sprites = pygame.sprite.Group()
 
-        # setup
         self.tmx_data = load_pygame('data/map.tmx')
+        # soil
+        self.soil_layer = SoilLayer(self.all_sprites)
+
+        # setup
         self.setup()
+
         # Player
         for obj in self.tmx_data.get_layer_by_name('Player'):
             if obj.name == 'Start':
@@ -29,7 +34,8 @@ class Level:
                                      self.all_sprites,
                                      self.collision_sprites,
                                      self.tree_sprites,
-                                     self.interaction_sprites)
+                                     self.interaction_sprites,
+                                     self.soil_layer)
 
             if obj.name == "Bed":
                 Interaction((obj.x, obj.y), (obj.width, obj.height), self.interaction_sprites, obj.name)
