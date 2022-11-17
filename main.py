@@ -8,7 +8,7 @@ class Game:
     def __init__(self):
         pygame.init()
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-        pygame.display.set_caption('qgxx-monogatari')
+        pygame.display.set_caption('whose-monogatari')
         self.clock = pygame.time.Clock()
         self.level = Level()
 
