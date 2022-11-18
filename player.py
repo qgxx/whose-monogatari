@@ -98,7 +98,7 @@ class Player(pygame.sprite.Sprite):
             self.soil_player.get_hit(self.target_pos)
 
         if self.selected_tool == 'water':
-            pass
+            self.soil_player.water(self.target_pos)
 
         if self.selected_tool == 'axe':
             for tree in self.tree_sprites.sprites():
