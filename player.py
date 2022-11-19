@@ -109,7 +109,7 @@ class Player(pygame.sprite.Sprite):
         self.target_pos = self.rect.center + PLAY_TOOL_OFFSET[self.status.split('_')[0]]
 
     def use_seed(self):
-        pass
+        self.soil_player.plant_seed(self.target_pos, self.selected_seed)
 
     def input(self):
         """

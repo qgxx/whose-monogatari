@@ -26,4 +26,8 @@ pytmx 3.31
 * Space: 使用工具
 * E: 切换种子
 * Ctrl: 使用种子
-* Enter: 交互
+* Enter: 交互(床、商人)
+
+# 待修改
+部分对象的 collision  
+之后需要重构代码(主要修改`level.py`, `player.py`)

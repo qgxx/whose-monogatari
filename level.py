@@ -23,8 +23,9 @@ class Level:
         self.interaction_sprites = pygame.sprite.Group()
 
         self.tmx_data = load_pygame('data/map.tmx')
+
         # soil
-        self.soil_layer = SoilLayer(self.all_sprites)
+        self.soil_layer = SoilLayer(self.all_sprites, self.collision_sprites)
 
         # setup
         self.setup()
@@ -102,6 +103,9 @@ class Level:
         self.player.item_inventory[item] += 1
 
     def reset(self):
+        # plants
+        self.soil_layer.update_plants()
+
         # soil
         self.soil_layer.remove_water()
         # randomize the rain
