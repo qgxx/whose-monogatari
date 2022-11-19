@@ -22,6 +22,9 @@ class Interaction(Generic):
 
 
 class Particle(Generic):
+    """
+    Animation of destruction
+    """
     def __init__(self, pos, surf, groups, z, duration=200):
         super().__init__(pos, surf, groups, z)
         self.start_time = pygame.time.get_ticks()

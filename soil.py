@@ -52,7 +52,7 @@ class Plant(pygame.sprite.Sprite):
                 self.harvestable = True
             if int(self.age) > 0:
                 self.z = LAYERS['main']
-                self.hitbox = self.rect.copy().inflate(-26, self.rect.height * 0.4)
+                self.hitbox = self.rect.copy().inflate(-26, -self.rect.height * 0.4)
 
             self.image = self.frames[int(self.age)]
             self.rect = self.image.get_rect(midbottom=self.soil.rect.midbottom + pygame.math.Vector2(0, self.y_offset))
