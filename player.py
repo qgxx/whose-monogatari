@@ -1,3 +1,5 @@
+import pygame.mixer
+
 from settings import *
 from support import *
 from timer import Timer
@@ -81,6 +83,10 @@ class Player(pygame.sprite.Sprite):
         # get_target_pos
         self.target_pos = self.rect.center
 
+        # sounds
+        self.watering = pygame.mixer.Sound('audio/water.mp3')
+        self.watering.set_volume(0.3)
+
     def import_assets(self):
         """
         load graphics (character) to animations (dict)
@@ -105,6 +111,7 @@ class Player(pygame.sprite.Sprite):
 
         if self.selected_tool == 'water':
             self.soil_player.water(self.target_pos)
+            self.watering.play()
 
         if self.selected_tool == 'axe':
             for tree in self.tree_sprites.sprites():
