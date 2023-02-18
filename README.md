@@ -3,10 +3,6 @@
 暂定名称：whose monogatari（谁的物语）
 
 ---
-本项目是再这位 youtube 大佬的教学视频上的二次加工
-https://www.youtube.com/watch?v=R9apl6B_ZgI&list=PLFoarB-GjjRaerZSogpsx_fTbqf3-frUP&index=1
-
----
 后续可能会加入战斗模块（~~在我不犯懒时~~），当然也会加入AI怪物。  
 地图也会进行更新扩张  
 并且增加更多功能。。。待开发（比如服装、建筑）
